@@ -20,4 +20,8 @@ public class MainFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
+    public void setText(String text){
+        // TODO: 07/12/2017 - Will need some kind of Data Binding with this?? .
+    }
+
 }
