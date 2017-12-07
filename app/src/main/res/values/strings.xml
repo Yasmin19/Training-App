@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Login Screen -->
+    <string name="app_name">TrainingApp</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="log_in_button">LOG IN</string>
+    <string name="password_text">Password</string>
+    <string name="email_text">Email</string>
+
+
+    <!-- MainFragment -->
+    <string name="hello_blank_fragment">Hello this is the main fragment</string>
+
+</resources>
