@@ -13,7 +13,6 @@ public class MainActivity
         setContentView(R.layout.activity_main);
 
         /*
-
         MainFragment frag = new MainFragment();
         android.support.v4.app.FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = supportFragmentManager.beginTransaction();
