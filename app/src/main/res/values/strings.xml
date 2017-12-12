@@ -11,5 +11,6 @@
 
     <!-- MainFragment -->
     <string name="hello_blank_fragment">Hello this is the main fragment</string>
+    <string name="title_activity_maps_test2">Map</string>
 
 </resources>

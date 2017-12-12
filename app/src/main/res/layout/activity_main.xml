@@ -10,8 +10,8 @@
     <ImageButton
         android:id="@+id/button4"
         android:src="@android:drawable/ic_lock_lock"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="524dp"
@@ -23,8 +23,8 @@
     <ImageButton
         android:id="@+id/button5"
         android:src="@android:drawable/ic_lock_lock"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="524dp"
@@ -36,8 +36,8 @@
     <ImageButton
         android:id="@+id/button2"
         android:src="@android:drawable/ic_lock_lock"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="524dp"
@@ -49,8 +49,8 @@
     <ImageButton
         android:id="@+id/button3"
         android:src="@android:drawable/ic_lock_lock"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="524dp"
@@ -62,8 +62,8 @@
     <ImageButton
         android:id="@+id/button6"
         android:src="@android:drawable/ic_lock_lock"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="524dp"
@@ -72,14 +72,23 @@
         app:layout_constraintStart_toEndOf="@+id/button5"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <RelativeLayout
         android:id="@+id/frag_container"
-        android:layout_width="408dp"
+        android:layout_width="match_parent"
         android:layout_height="521dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            tools:context="com.example.devpair5.trainingapp2.MapsActivity" />
 
     </RelativeLayout>
 

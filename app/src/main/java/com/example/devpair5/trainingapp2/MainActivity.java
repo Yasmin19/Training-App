@@ -12,10 +12,12 @@ public class MainActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*
+
         MainFragment frag = new MainFragment();
         android.support.v4.app.FragmentManager supportFragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = supportFragmentManager.beginTransaction();
         transaction.add(R.id.frag_container, frag, "helloFragment");
-        transaction.commit();
+        transaction.commit();*/
     }
 }
