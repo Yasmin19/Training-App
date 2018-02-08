@@ -22,7 +22,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintStart_toEndOf="@+id/button3"/>
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        android:text="@{viewModel.test"/>
 
     <ImageButton
         android:id="@+id/button5"
@@ -42,9 +43,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick= "@{viewModel.onTabButtonClick()}"
-        android:backgroundTint="@{() -> viewModel.selectedTab ? @color/colorActiveButton : @color/colorInactiveButton"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageButton
         android:id="@+id/button3"

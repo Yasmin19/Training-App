@@ -24,6 +24,7 @@ public class BottomTabBarFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        super.onCreateView(inflater, container, savedInstanceState);
         FragmentBottomTabBarBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bottom_tab_bar, container, false);
         binding.setViewModel(bottomTabBarViewModel);
         return binding.getRoot();
@@ -34,5 +35,4 @@ public class BottomTabBarFragment extends Fragment {
         AndroidSupportInjection.inject(this);
         super.onAttach(context);
     }
-
 }

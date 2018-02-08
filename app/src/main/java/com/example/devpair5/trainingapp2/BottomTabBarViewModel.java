@@ -14,12 +14,19 @@ import android.util.Log;
 public class BottomTabBarViewModel {
 
     ObservableField<Color> selectedTab = new ObservableField<>();
+    ObservableField<String> test = new ObservableField<>();
 
     public BottomTabBarViewModel() {
+        test.set("elloello");
+
+        Log.d("test", test.get());
     }
 
     public void onTabButtonClick(){
         //selectedTab.set(Color.parseColor());
         Log.d("test", "method successfully called");
+        test.set("elloello");
+
+        Log.d("test", test.get());
     }
 }
