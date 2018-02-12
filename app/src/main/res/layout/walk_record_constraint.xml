@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="150dp">
 
+
+    <!-- GUIDELINES -->
     <android.support.constraint.Guideline
-        android:id="@+id/guideline1"
+        android:id="@+id/guidelineVer1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -15,13 +17,105 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guidelineVer2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintGuide_percent="0.67"
         app:layout_constraintStart_toStartOf="@id/constraintLayout" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideLineHor1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+        app:layout_constraintGuide_percent="0.25"
+        app:layout_constraintStart_toStartOf="@id/constraintLayout" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideLineHor2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.81" />
+
+
+    <!-- VIEWS
+
+     <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"
+        app:layout_constraintRight_toLeftOf="@id/guidelineVer1"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="118dp"
+        android:background="@drawable/layout_border"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVer1"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVer2"
+        app:layout_constraintRight_toRightOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
+
+     -->
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineHor1"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"/>
+
+    <View
+        android:id="@+id/view_divider2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintEnd_toStartOf="@+id/guideLineHor1"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor2"/>
+
+    <View
+        android:id="@+id/view_divider3"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVer1"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
+
+    <View
+        android:id="@+id/view_divider4"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintLeft_toRightOf="@id/guidelineVer2"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorLightGreyBackground"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor1"
+        app:layout_constraintEnd_toStartOf="@id/guideLineHor2"/>
+
 
     <!-- VERTICAL SECTION 1 -->
     <ImageView
@@ -30,10 +124,12 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_road_perspective"
         app:layout_constraintBottom_toTopOf="@+id/sec1Distance"
-        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVer1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/guideLineHor1"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/sec1Distance"
@@ -41,8 +137,9 @@
         android:layout_height="wrap_content"
         android:text="1.09"
         android:textSize="20sp"
+        android:textColor="@color/colorNumbersText"
         app:layout_constraintBottom_toTopOf="@+id/sec1DistanceTxt"
-        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVer1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sec1Image" />
@@ -54,10 +151,11 @@
         android:text="DISTANCE(KM)"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVer1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sec1Distance" />
+        app:layout_constraintTop_toBottomOf="@+id/sec1Distance"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
 
     <!-- VERTICAL SECTION 2 -->
     <ImageView
@@ -66,8 +164,11 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_stopwatch"
         app:layout_constraintBottom_toTopOf="@id/sec2Time"
-        app:layout_constraintLeft_toLeftOf="@id/guideline1"
-        app:layout_constraintRight_toLeftOf="@+id/guideline2" />
+        app:layout_constraintLeft_toLeftOf="@id/guidelineVer1"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
+        app:layout_constraintTop_toTopOf="@id/guideLineHor1"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/sec2Time"
@@ -75,9 +176,10 @@
         android:layout_height="wrap_content"
         android:text="9:45"
         android:textSize="20sp"
+        android:textColor="@color/colorNumbersText"
         app:layout_constraintBottom_toTopOf="@+id/sec2AvgPace"
-        app:layout_constraintLeft_toLeftOf="@id/guideline1"
-        app:layout_constraintRight_toLeftOf="@+id/guideline2"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineVer1"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
         app:layout_constraintTop_toBottomOf="@+id/sec2Image" />
 
     <TextView
@@ -87,9 +189,11 @@
         android:text="AVERAGE PACE"
         android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
-        app:layout_constraintLeft_toLeftOf="@id/guideline1"
-        app:layout_constraintRight_toLeftOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/sec2Time" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineVer1"
+        app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
+        app:layout_constraintTop_toBottomOf="@+id/sec2Time"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"/>
 
 
     <!-- VERTICAL SECTION 3 -->
@@ -99,8 +203,23 @@
         android:src="@drawable/ic_stopwatch"
         app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="@id/constraintLayout"
-        app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout" />
+        app:layout_constraintStart_toStartOf="@id/guidelineVer2"
+        app:layout_constraintTop_toTopOf="@id/guideLineHor1"
+        app:layout_constraintBottom_toTopOf="@id/guideLineHor2"
+        app:layout_constraintTop_toBottomOf="@id/guideLineHor2"/>
 
 
 </android.support.constraint.ConstraintLayout>
+
+
+<!--
+<View
+        android:id="@+id/view_divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray_divider"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintTop_toTopOf="@+id/barrier_bottom_action_buttons" />
+-->

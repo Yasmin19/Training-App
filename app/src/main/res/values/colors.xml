@@ -6,4 +6,9 @@
     <color name="colorActiveButton">#FFFF00</color>
     <color name="colorInactiveButton">#000000</color>
 
+    <color name="colorNumbersText">#000000</color>
+    <color name="colorBorder">#535454</color>
+    <color name="colorLightGreyBackground">#d6dbdc</color>
+
+
 </resources>
