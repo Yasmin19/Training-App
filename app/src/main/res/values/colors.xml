@@ -7,8 +7,9 @@
     <color name="colorInactiveButton">#000000</color>
 
     <color name="colorNumbersText">#000000</color>
-    <color name="colorBorder">#535454</color>
-    <color name="colorLightGreyBackground">#d6dbdc</color>
+    <color name="colorBorder">#a9acac</color>
+    <color name="colorLightGreyBackground">#e5e9ea</color>
+    <color name="colorGreyBackground">#aaadae</color>
 
 
 </resources>
