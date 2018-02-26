@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="com.example.devpair5.trainingapp2.WalkRecordViewModel"/>
+    </data>
+    <android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <!-- GUIDELINES -->
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineVer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.33"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guidelineVer2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.67"
+            app:layout_constraintStart_toStartOf="@id/constraintLayout" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideLineHor1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+            app:layout_constraintGuide_percent="0.3"
+            app:layout_constraintStart_toStartOf="@id/constraintLayout" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideLineHor2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.74" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideLineHor3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95"/>
+
+
+        <!-- VIEWS -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreyBackground"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor3"/>
+
+        <View
+            android:id="@+id/view_divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorBorder"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+            app:layout_constraintEnd_toStartOf="@+id/guideLineHor1"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor1" />
+
+        <View
+            android:id="@+id/view_divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorBorder"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+            app:layout_constraintEnd_toStartOf="@+id/guideLineHor1"
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2" />
+
+        <View
+            android:id="@+id/view_divider3"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/colorBorder"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor2"
+            app:layout_constraintLeft_toRightOf="@id/guidelineVer1"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor1" />
+
+        <View
+            android:id="@+id/view_divider4"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/colorBorder"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor2"
+            app:layout_constraintLeft_toRightOf="@id/guidelineVer2"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor1" />
+
+
+        <!-- HORIZONTAL SECTION 1 -->
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor1"
+            app:layout_constraintLeft_toLeftOf="@id/constraintLayout"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:paddingTop="8dp"
+            android:text="Yasmin Sahraoui"
+            android:textColor="@color/colorNumbersText"
+            app:layout_constraintBottom_toTopOf="@+id/date_text"
+            app:layout_constraintLeft_toRightOf="@id/profile_image" />
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Walk - Wednesday 15 Jun"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideLineHor1"
+            app:layout_constraintLeft_toRightOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_friends"
+            app:layout_constraintRight_toLeftOf="@id/expand_button"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor1"
+            android:paddingEnd="3dp"/>
+
+        <ImageView
+            android:id="@+id/expand_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_expand_button"
+            app:layout_constraintRight_toLeftOf="@id/constraintLayout"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor1"
+            android:paddingEnd="10dp"/>
+
+
+        <!-- VERTICAL SECTION 1 -->
+        <ImageView
+            android:id="@+id/sec1Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/ic_road_perspective"
+            app:layout_constraintBottom_toTopOf="@+id/sec1Distance"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVer1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintTop_toTopOf="@id/guideLineHor1" />
+
+        <TextView
+            android:id="@+id/sec1Distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.09"
+            android:textColor="@color/colorNumbersText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/sec1DistanceTxt"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVer1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sec1Image" />
+
+        <TextView
+            android:id="@+id/sec1DistanceTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DISTANCE(KM)"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor2"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVer1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sec1Distance" />
+
+        <!-- VERTICAL SECTION 2 -->
+        <ImageView
+            android:id="@+id/sec2Image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_stopwatch"
+            app:layout_constraintBottom_toTopOf="@id/sec2Time"
+            app:layout_constraintLeft_toLeftOf="@id/guidelineVer1"
+            app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintTop_toTopOf="@id/guideLineHor1" />
+
+        <TextView
+            android:id="@+id/sec2Time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9:45"
+            android:textColor="@color/colorNumbersText"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/sec2AvgPace"
+            app:layout_constraintLeft_toLeftOf="@id/guidelineVer1"
+            app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
+            app:layout_constraintTop_toBottomOf="@+id/sec2Image" />
+
+        <TextView
+            android:id="@+id/sec2AvgPace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AVERAGE PACE"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor2"
+            app:layout_constraintLeft_toLeftOf="@id/guidelineVer1"
+            app:layout_constraintRight_toLeftOf="@+id/guidelineVer2"
+            app:layout_constraintTop_toBottomOf="@+id/sec2Time" />
+
+
+        <!-- VERTICAL SECTION 3 -->
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_stopwatch"
+            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor2"
+            app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+            app:layout_constraintStart_toStartOf="@id/guidelineVer2"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintTop_toTopOf="@id/guideLineHor1" />
+
+
+        <!-- HORIZONTAL SECTION 2 -->
+        <ImageView
+            android:id="@+id/like_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_like"
+            app:layout_constraintLeft_toLeftOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp" />
+
+        <ImageView
+            android:id="@+id/comment_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_comment"
+            app:layout_constraintLeft_toRightOf="@id/like_image"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"/>
+
+        <ImageView
+            android:id="@+id/forward_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_forward"
+            app:layout_constraintLeft_toRightOf="@id/comment_image"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintBottom_toTopOf="@id/guideLineHor3"
+            android:layout_margin="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more"
+            app:layout_constraintRight_toLeftOf="@id/constraintLayout"
+            app:layout_constraintTop_toBottomOf="@id/guideLineHor2"
+            app:layout_constraintBottom_toBottomOf="@id/guideLineHor3"
+            android:paddingRight="10dp"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>
+
+<!--
+<View
+        android:id="@+id/view_divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/gray_divider"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+        app:layout_constraintTop_toTopOf="@+id/barrier_bottom_action_buttons" />
+-->
